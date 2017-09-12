@@ -1,0 +1,14 @@
+- name: this command prints FAILED when it fails
+  hosts: localhost
+  tasks:
+   - name: test failed
+     command: /usr/bin/example-command -x -y -z
+     register: command_result
+     ignore_errors: True
+
+- name: fail the play if the previous command did not succeed
+  hosts: localhost
+  tasks:
+   - name: test failed
+     fail: msg="the command failed"
+     when: "FAILED in command_result.stderr"

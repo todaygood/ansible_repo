@@ -1,0 +1,9 @@
+---
+
+- name: this command prints FAILED when it fails
+  hosts: localhost
+  tasks:
+    - name: task1
+      command: /usr/bin/example-command -x -y -z
+      register: command_result
+      failed_when: "'FAILED' in command_result.stderr"

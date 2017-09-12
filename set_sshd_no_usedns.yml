@@ -1,0 +1,8 @@
+---
+- hosts: kvm1
+  remote_user: root
+  tasks:
+    - name: no UseDNS
+      lineinfile: dest=/etc/ssh/sshd_config insertafter=^#UseDNS  line="UseDNS no"  
+ 
+    - service: name=sshd  state=restarted

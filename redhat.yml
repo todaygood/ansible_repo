@@ -1,0 +1,6 @@
+- name: test os 
+  hosts: localhost
+  tasks:
+  - name: "shutdown Debian flavored systems"
+    command: /sbin/ifconfig
+    when: ansible_os_family == "Redhat"

@@ -1,0 +1,8 @@
+- hosts: localhost
+  tasks:
+     - shell: /usr/bin/foo
+       register: foo_result
+       ignore_errors: True
+
+     - shell: /usr/bin/echo "todaygood" >> /tmp/record
+       when: foo_result.rc == 127 

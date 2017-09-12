@@ -1,0 +1,14 @@
+---
+
+- name: test failed
+  hosts: localhost
+  tasks:
+
+    - shell: /usr/bin/billybass --mode="take me to the river"
+      register: bass_result
+      changed_when: "bass_result.rc == 2"
+
+     # this will never report 'changed' status
+    - shell: wall 'beep'
+      changed_when: False
+

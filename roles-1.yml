@@ -1,0 +1,15 @@
+---
+- hosts: kvm0
+
+  pre_tasks:
+    - shell: echo 'hello'      #最先执行
+
+  roles:
+    - { role: some_role }      #第二个执行
+
+  tasks:
+    - shell: echo 'still busy'
+
+  post_tasks:
+    - shell: echo 'goodbye'     #最后执行
+

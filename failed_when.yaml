@@ -1,0 +1,8 @@
+---
+
+- name: test failed
+  hosts: localhost
+  tasks:
+
+    - shell: /bin/echo "take me to the river" >> /tmp/river
+      failed_when: true

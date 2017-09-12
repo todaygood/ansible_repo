@@ -1,0 +1,7 @@
+---
+- hosts: windows
+  remote_user: Mike
+  tasks:
+    - name: Copy ansible inventory file to client
+      copy: src=/etc/ansible/hosts dest=E:\
+

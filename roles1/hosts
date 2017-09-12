@@ -1,0 +1,10 @@
+[all]
+ospp9-ctrl1
+ospp9-cmp1
+
+[controls]
+ospp9-ctrl1
+
+[computes]
+ospp9-ctrl1
+ospp9-cmp1

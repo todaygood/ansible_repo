@@ -1,0 +1,11 @@
+---
+- name: add several users
+  hosts: ceph2-node1
+  remote_user: root
+  tasks:
+    - user: name={{ item }} state=present groups=wheel
+
+      with_items:
+        - testuser1
+        - testuser2
+

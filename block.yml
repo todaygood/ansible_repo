@@ -1,0 +1,18 @@
+---
+- name: use block
+  hosts: ceph2-node1
+  remote_user: root
+  tasks:
+     - block:
+         - yum: name={{ item }} state=installed
+           with_items:
+             - httpd
+             - memcached
+
+         - template: src=templates/src.j2 dest=/etc/foo.conf
+
+         - service: name=bar state=started enabled=True
+
+       when: ansible_distribution == 'Redhat'
+       become: true
+       become_user: root

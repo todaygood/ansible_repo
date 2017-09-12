@@ -1,0 +1,12 @@
+---
+- hosts: kvm0
+  remote_user: root
+  tasks:
+    - name: test connection
+      ping:
+      remote_user: root
+    - name: disable selinux
+      command: /sbin/setenforce 0
+    - name: make sure apache is running
+      service: name=httpd state=running
+

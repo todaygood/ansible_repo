@@ -1,0 +1,6 @@
+---
+- hosts: kvm0
+  remote_user: root
+  tasks:
+    - name: test scripts
+      script: ./a.sh 

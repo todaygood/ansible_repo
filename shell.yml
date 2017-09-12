@@ -1,0 +1,7 @@
+---
+- hosts: kvm0 
+  remote_user: root
+  tasks:
+  - name: run this command and ignore the result
+    shell: /usr/bin/somecommand
+    ignore_errors: True

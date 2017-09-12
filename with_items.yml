@@ -1,0 +1,11 @@
+---
+- name: install required packages using the apt module
+  hosts: ceph2-node1
+  remote_user: root
+  tasks:
+    - name: install
+      yum: package={{ item }}  state=present
+      sudo: True
+      with_items:
+        - git
+        - httpd
