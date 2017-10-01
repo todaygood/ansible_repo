@@ -1,0 +1,10 @@
+--- 
+- name: build an environment for coding
+  hosts: coder
+  roles:
+    - vim 
+    - git
+    - bash
+
+
+

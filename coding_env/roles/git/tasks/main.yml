@@ -1,0 +1,11 @@
+---
+- name: copy git config file 
+  copy:
+    src: gitconfig
+    dest: ~/.gitconfig
+
+- name: copy git bash-complete file 
+  copy:
+    src: git-completion.bash
+    dest: /etc/
+    

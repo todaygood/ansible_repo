@@ -1,0 +1,10 @@
+---
+- name: copy my bashrc to /opt 
+  template: 
+    src: bashrc.j2
+    dest: /opt/bashrc
+
+- name: append bashrc to ~/.bashrc
+  shell: cat /opt/bashrc >> ~/.bashrc 
+
+

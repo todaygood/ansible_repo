@@ -1,0 +1,33 @@
+---
+- file:
+    state: directory
+    path: "~/.vim/{{ item}}"
+  with_items:
+    - bundle
+    - plugin
+
+- unarchive:
+    src: taglist_46.zip
+    dest: ~/.vim/
+
+- git: 
+    repo: https://github.com/gmarik/Vundle.vim.git 
+    dest: ~/.vim/bundle/Vundle.vim
+
+- copy:
+    src: vimrc
+    dest: /tmp/vimrc
+
+- copy:
+    src: vimrc.Vundle
+    dest: /tmp/vimrc.Vundle
+
+- name: backup origin vimrc
+  command: mv ~/.vimrc  ~/.vimrc.org
+  ignore_errors: true
+
+- shell: cat /tmp/vimrc.Vundle /tmp/vimrc > ~/.vimrc 
+
+
+
+

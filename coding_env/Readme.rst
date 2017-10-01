@@ -1,0 +1,6 @@
+
+
+# vim for golang
+
+:InstallGoBinaries
+:

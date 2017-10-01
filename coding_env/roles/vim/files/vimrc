@@ -23,4 +23,7 @@ set softtabstop=4
 set shiftwidth=4
 
 "匹配括号 
-""set showmatch
+set showmatch
+
+"set 自己定义不可见字符的显示方式
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
