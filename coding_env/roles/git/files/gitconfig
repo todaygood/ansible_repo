@@ -10,4 +10,6 @@
     interactive = auto
     ui = true
     pager = true
-
+#store http repo username and password
+[credential]
+        helper = store
