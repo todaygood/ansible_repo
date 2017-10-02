@@ -5,5 +5,10 @@
   with_items:
     - ctags
     - cscope
+    - vim 
+    - git
+    - gcc
+    - make
+
 
 
