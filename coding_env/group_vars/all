@@ -2,7 +2,7 @@
 
 ENV_GOPATH: "/root/go_repo"
 
-HTTP_PROXY: "http://10.168.89.1:7701"
+HTTP_PROXY: "http://10.168.89.1:7777"
 
 
 

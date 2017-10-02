@@ -1,0 +1,10 @@
+- name: install powershell
+  win_chocolatey:
+    name: '{{ item }}'
+    state: 'present'
+    upgrade: True
+  with_items:
+    - "powershell"
+  register: check_powershell5
+  when: "{{ ansible_PSVersionTable.Major|int < 5 }}"
+  tags: win_powershell

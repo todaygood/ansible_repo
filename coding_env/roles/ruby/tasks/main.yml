@@ -1,0 +1,9 @@
+---
+
+- name: run install sh
+  script: install_ruby24.sh
+
+- name: add profile sh
+  copy: 
+    src: env_ruby24.sh
+    dest: /etc/profile.d/
